@@ -1,6 +1,6 @@
 <h3>Your answer is: <%= @answer_array.join.downcase %></h3>
 <%= @return %>
 <% scored = "" %>
-<% (scored = "Your score is #{@score}!") if (@score != nil) %>
-<%= scored %>
-<p><%= link_to "Play again!", new_path %></p>
+<% (scored = "Score: #{@score}") if (@score != nil) %>
+<p><%= scored %></p>
+<div class="btn"><%= link_to "Play again!", new_path %></div>

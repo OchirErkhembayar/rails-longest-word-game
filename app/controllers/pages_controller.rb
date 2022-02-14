@@ -2,12 +2,9 @@ require 'net/http'
 require 'json'
 class PagesController < ApplicationController
   def new
-    letters = ('a'..'z').to_a
-    @array = []
-    10.times do
-      @array << letters.sample.upcase.to_s
-    end
-    @array
+    @array = Array.new(8) { ('A'..'Z').to_a.sample }
+    vowels = %w[A E I O U]
+    2.times { @array << vowels.sample }
   end
 
   def score
