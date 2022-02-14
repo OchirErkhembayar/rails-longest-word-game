@@ -4,3 +4,4 @@
 <% (scored = "Score: #{@score}") if (@score != nil) %>
 <p><%= scored %></p>
 <div class="btn"><%= link_to "Play again!", root_path %></div>
+<div class="btn"><%= link_to "Try Again", root_path(letters: @letters) %> </div>

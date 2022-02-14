@@ -2,9 +2,9 @@ require 'net/http'
 require 'json'
 class PagesController < ApplicationController
   def new
-    @array = Array.new(8) { ('A'..'Z').to_a.sample }
+    @array = params[:letters] || Array.new(8) { ('A'..'Z').to_a.sample }
     vowels = %w[A E I O U]
-    2.times { @array << vowels.sample }
+    2.times { @array << vowels.sample } unless @array == params[:letters]
   end
 
   def score
