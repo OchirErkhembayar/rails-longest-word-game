@@ -21,9 +21,7 @@ class PagesController < ApplicationController
   end
 
   def valid_word?(answer)
-    if answer.include? ' '
-      answer = answer.gsub(" ", "%20")
-    end
+    answer = answer.gsub(' ', '%20')
     url = "https://wagon-dictionary.herokuapp.com/#{answer.downcase}"
     uri = URI(url)
     response = Net::HTTP.get(uri)
