@@ -1,0 +1,25 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.letters {
+  display: grid;
+}
+
+.container {
+  width: 700px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: antiquewhite;
+  padding: 20px 0px 50px 0px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 15px rgb(100, 100, 100);
+}
+
+a {
+  text-decoration: none;
+}
