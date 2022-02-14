@@ -16,12 +16,15 @@ class PagesController < ApplicationController
     elsif valid_word?(@answer_array.join) && !contains?(@answer_array, @letters)
       @return = 'Your word isn\'t in the grid!'
     else
-      @return = 'Your word is not a valid word!'
+      @return = 'That is not an english word!'
     end
   end
 
   def valid_word?(answer)
-    url = "https://wagon-dictionary.herokuapp.com/#{answer}"
+    if answer.include? ' '
+      answer = answer.gsub(" ", "%20")
+    end
+    url = "https://wagon-dictionary.herokuapp.com/#{answer.downcase}"
     uri = URI(url)
     response = Net::HTTP.get(uri)
     json = JSON.parse(response)
